@@ -38,6 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
 
+    // Active Link Highlighting
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    menuLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('text-teal');
+        } else {
+            link.classList.remove('text-teal');
+        }
+    });
+
     // Dots Animation Placeholder
     initDotsAnimation();
 });
