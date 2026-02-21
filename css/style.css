@@ -115,3 +115,78 @@ body::before {
     background-attachment: fixed;
     will-change: transform;
 }
+
+/* 3D Expertise Cards */
+.expertise-card {
+    perspective: 1000px;
+    height: 320px;
+}
+
+.expertise-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.expertise-card:hover .expertise-inner {
+    transform: rotateY(180deg);
+}
+
+.expertise-front,
+.expertise-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.expertise-front {
+    background: white;
+    z-index: 2;
+}
+
+.expertise-back {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.expertise-back h3 {
+    color: white !important;
+    margin-bottom: 0.75rem;
+}
+
+.expertise-back p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
