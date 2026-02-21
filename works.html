@@ -34,6 +34,10 @@
 
 <body class="bg-offwhite text-navy font-sans overflow-x-hidden">
 
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <!-- Fixed Side Navigation (Left) -->
     <div
         class="fixed left-0 top-0 h-screen w-12 border-r border-gray-200 hidden lg:flex flex-col items-center justify-center z-50 bg-white">
@@ -54,7 +58,7 @@
 
     <!-- Full Screen Menu Overlay -->
     <div id="menu-overlay"
-        class="fixed inset-0 bg-navy/95 z-[60] flex flex-col items-center justify-center text-white opacity-0 pointer-events-none transition-all duration-500">
+        class="fixed inset-0 glass-dark z-[60] flex flex-col items-center justify-center text-white opacity-0 pointer-events-none transition-all duration-500">
         <button id="menu-close"
             class="absolute top-8 right-12 text-sm tracking-widest hover:text-teal font-semibold">CLOSE</button>
         <nav class="flex flex-col gap-8 text-center">
@@ -97,7 +101,7 @@
     </main>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/your-number" target="_blank"
+    <a href="https://wa.me/971562816806" target="_blank"
         class="fixed bottom-8 left-16 z-50 bg-teal text-white p-3 rounded-full shadow-lg hover:bg-navy transition-all transform hover:scale-110 flex items-center gap-2">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path

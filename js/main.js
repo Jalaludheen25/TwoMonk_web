@@ -22,21 +22,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Reveal on Scroll Logic
+    // Parallax Effect for Hero
+    const heroSection = document.getElementById('home');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if (heroSection) {
+            heroSection.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        }
+    });
+
+    // Improved Reveal on Scroll Logic
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-right');
 
-    const revealOnScroll = () => {
-        revealElements.forEach(el => {
-            const elementTop = el.getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < window.innerHeight - elementVisible) {
-                el.classList.add('reveal-active');
-            }
-        });
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Custom Cursor Logic
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    if (cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Immediate position for dot
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            cursorDot.style.opacity = '1';
+
+            // Smooth lag for outline
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+            cursorOutline.style.opacity = '1';
+        });
+
+        // Hover effects
+        const interactiveElements = document.querySelectorAll('a, button, .menu-link, .hover-lift');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('cursor-hover');
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('cursor-hover');
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
+    }
 
     // Active Link Highlighting
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
