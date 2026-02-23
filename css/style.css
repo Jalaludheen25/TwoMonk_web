@@ -75,11 +75,12 @@ body::before {
 /* Enhanced Card Hover */
 .hover-lift {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(0, 169, 157, 0.3);
 }
 
 .hover-lift:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px -12px rgba(0, 169, 157, 0.2);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25), 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
 /* Glow Effect */
@@ -120,18 +121,21 @@ body::before {
 .expertise-card {
     perspective: 1000px;
     height: 320px;
+    position: relative;
 }
 
 .expertise-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
     transform-style: preserve-3d;
+    border-radius: 1.5rem;
 }
 
 .expertise-card:hover .expertise-inner {
     transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
 }
 
 .expertise-front,
@@ -148,7 +152,24 @@ body::before {
 }
 
 .expertise-front {
-    background: white;
+    background-color: white;
+    z-index: 2;
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Overlay removed for clarity - using text shadows for readability instead */
+
+.expertise-front i,
+.expertise-front h3 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+}
+
+.expertise-front>* {
+    position: relative;
     z-index: 2;
 }
 
@@ -162,6 +183,7 @@ body::before {
     align-items: center;
     justify-content: center;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .expertise-back h3 {
