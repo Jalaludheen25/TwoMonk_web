@@ -37,18 +37,27 @@
 
     <!-- Fixed Side Navigation (Left) -->
     <div
-        class="fixed left-0 top-0 h-screen w-12 border-r border-gray-200 hidden lg:flex flex-col items-center justify-center z-50 bg-white">
+        class="fixed left-0 top-0 h-screen w-16 border-r border-gray-200 hidden lg:flex flex-col items-center justify-between py-12 z-50 bg-white">
+        <a href="index.html"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-offwhite hover:bg-teal hover:text-white transition-all duration-300 text-navy">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                </path>
+            </svg>
+        </a>
         <button id="menu-toggle"
-            class="transform -rotate-90 origin-center whitespace-nowrap tracking-widest text-xs font-semibold hover:text-teal transition-colors">
+            class="transform -rotate-90 origin-center whitespace-nowrap tracking-widest text-base font-bold hover:text-teal transition-colors py-4">
             MENU
         </button>
+        <div class="h-10 w-10"></div> <!-- Spacer to balance -->
     </div>
 
     <!-- Fixed Side Contact (Right) -->
     <div
-        class="fixed right-0 top-0 h-screen w-12 border-l border-gray-200 hidden lg:flex flex-col items-center justify-center z-50 bg-white">
+        class="fixed right-0 top-0 h-screen w-16 border-l border-gray-200 hidden lg:flex flex-col items-center justify-center z-50 bg-white">
         <a href="enquiry.html"
-            class="transform rotate-90 origin-center whitespace-nowrap tracking-widest text-xs font-semibold hover:text-teal transition-colors">
+            class="transform rotate-90 origin-center whitespace-nowrap tracking-widest text-base font-bold hover:text-teal transition-colors py-4">
             CONTACT US
         </a>
     </div>
@@ -81,7 +90,8 @@
                     <!-- Service 1 -->
                     <div class="expertise-card reveal-up">
                         <div class="expertise-inner">
-                            <div class="expertise-front group" style="background-image: url('assets/images/web_dev.png');">
+                            <div class="expertise-front group"
+                                style="background-image: url('assets/images/web_dev.png');">
                                 <div
                                     class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-white transition-colors">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +119,8 @@
                     <!-- Service 2 -->
                     <div class="expertise-card reveal-up" style="transition-delay: 100ms">
                         <div class="expertise-inner">
-                            <div class="expertise-front group" style="background-image: url('assets/images/mobile_app.png');">
+                            <div class="expertise-front group"
+                                style="background-image: url('assets/images/mobile_app.png');">
                                 <div
                                     class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-white transition-colors">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +149,8 @@
                     <!-- Service 3 -->
                     <div class="expertise-card reveal-up" style="transition-delay: 200ms">
                         <div class="expertise-inner">
-                            <div class="expertise-front group" style="background-image: url('assets/images/uiux_design.png');">
+                            <div class="expertise-front group"
+                                style="background-image: url('assets/images/uiux_design.png');">
                                 <div
                                     class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-white transition-colors">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +179,8 @@
                     <!-- Service 4 -->
                     <div class="expertise-card reveal-up" style="transition-delay: 300ms">
                         <div class="expertise-inner">
-                            <div class="expertise-front group" style="background-image: url('assets/images/it_consulting.png');">
+                            <div class="expertise-front group"
+                                style="background-image: url('assets/images/it_consulting.png');">
                                 <div
                                     class="w-12 h-12 bg-teal/10 rounded-lg flex items-center justify-center mb-6 text-teal group-hover:bg-teal group-hover:text-white transition-colors">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +216,7 @@
                 <!-- Brand -->
                 <div class="space-y-6">
                     <a href="index.html" class="flex items-center gap-3">
-                        <span class="text-3xl font-sans font-bold text-white tracking-tighter">TM</span>
+                        <span class="text-3xl font-sans font-bold text-white tracking-tighter uppercase">Twomonk</span>
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
                         Empowering businesses with cutting-edge technology solutions. From web to mobile, we build the
