@@ -6,6 +6,13 @@
     --offwhite: #F8F9FA;
 }
 
+/* Responsive Typography */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 /* Texture Pattern Overlay */
 body::before {
     content: "";
@@ -17,7 +24,7 @@ body::before {
     background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
     opacity: 0.03;
     pointer-events: none;
-    z-index: 100;
+    z-index: 10;
 }
 
 /* Animations */
@@ -51,6 +58,7 @@ body::before {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
 }
 
 /* Floating Animation */
@@ -211,4 +219,29 @@ body::before {
     border-radius: 4px;
     font-size: 0.7rem;
     letter-spacing: 0.05em;
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 1024px) {
+    .sidebar-hidden {
+        display: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .px-mobile {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .whatsapp-btn {
+        left: 1rem !important;
+        bottom: 1rem !important;
+    }
+
+    #home {
+        min-height: 50vh !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
 }

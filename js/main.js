@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Menu Toggle Logic
     const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const menuOverlay = document.getElementById('menu-overlay');
     const menuLinks = document.querySelectorAll('.menu-link');
@@ -12,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('overflow-hidden');
     };
 
-    menuToggle.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', toggleMenu);
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMenu);
+    if (menuClose) menuClose.addEventListener('click', toggleMenu);
 
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
